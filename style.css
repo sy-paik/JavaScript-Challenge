@@ -6,12 +6,7 @@
   --color-operatorColor: rgb(255, 176, 57);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
+.wrapper {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -112,9 +107,3 @@ button {
   padding-left: 25px;
 }
 
-footer {
-  width: 100%;
-  text-align: center;
-  margin-top: 50px;
-  color: var(--color-topColor);
-}

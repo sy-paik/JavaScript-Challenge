@@ -1,7 +1,3 @@
-// 1. 입력창(결과창), 임시 결과창, 계산 과정창
-// 2. .중복 체크
-// 3. 숫
-
 let display = document.querySelector(".display");
 let result = document.querySelector(".result");
 let btns = document.querySelectorAll("button");
@@ -29,33 +25,32 @@ function divide(a, b) {
 }
 
 
-
 btns.forEach((btn) => {
   switch (btn.classList[0]) {
     case "operator":
-      btn.addEventListener("click", handleOperatorClick);
+      btn.addEventListener("click", operatorBtn);
       break;
     case "clear":
-      btn.addEventListener("click", handleClearClick);
+      btn.addEventListener("click", clearBtn);
       break;
     case "equal":
-      btn.addEventListener("click", handleEqualClick);
+      btn.addEventListener("click", equalBtn);
       break;  
     case "operator2":
       if (btn.textContent === "+/-") {
-        btn.addEventListener("click", handlePlusMinus);
+        btn.addEventListener("click", plusMinusBtn);
     } else if (btn.textContent === "%") {
-       btn.addEventListener("click", handlePercentage);
+       btn.addEventListener("click", percentageBtn);
   }
   break;
 
     default:
-      btn.addEventListener("click", handleNumberClick);
+      btn.addEventListener("click", numberBtn);
       break;
   }
 });
 
-function handleNumberClick(e) {
+function numberBtn(e) {
   displayContent += e.target.textContent;
   display.innerHTML = displayContent;
   // result.innerHTML = e.target.textContent; // 숫자나 연산자 입력시 result에도 보여지도록 추가
@@ -63,7 +58,7 @@ function handleNumberClick(e) {
   isCalculated = false; 
 }
 
-function handleEqualClick(e) {
+function equalBtn(e) {
   if (!isCalculated && displayContent) {
     // 계산 전이면 계산 실행
     let operator = displayContent.match(/[^\d\.]+/g)[0];
@@ -88,13 +83,13 @@ function handleEqualClick(e) {
     }
     result.innerHTML = answer;
     lastResult = answer; // 이전에 계산된 값 저장
-   display.innerHTML = displayContent; 
-   displayContent = "";
+    display.innerHTML = displayContent; 
+    displayContent = "";
     isCalculated = true; // 계산 완료됨
   }
 }
 
-function handleClearClick(e) {
+function clearBtn(e) {
   displayContent = "";
   // display.innerHTML = displayContent;
   display.innerHTML = ""
@@ -102,7 +97,7 @@ function handleClearClick(e) {
   isCalculated = false; // 계산 전이므로 "=" 버튼 활성화
 }
 
-function handleOperatorClick(e) {
+function operatorBtn(e) {
   // 이전에 계산된 값이 있으면 이어서 계산
   if (lastResult) {
     displayContent = lastResult + e.target.textContent;
@@ -116,7 +111,7 @@ function handleOperatorClick(e) {
 }
 
 
-function handlePlusMinus(e) {
+function plusMinusBtn(e) {
   let currentValue = parseFloat(displayContent); // 현재 입력된 숫자를 가져오기
   if (currentValue !== 0) { 
     currentValue = -currentValue;
@@ -125,9 +120,9 @@ function handlePlusMinus(e) {
   }
 }
 
-function handlePercentage(e) {
+function percentageBtn(e) {
   let currentValue = parseFloat(displayContent); 
   currentValue = currentValue / 100; // 현재 값에 100을 나누어 백분율 값을 계산
   displayContent = currentValue.toString(); 
-  display.innerHTML = displayContent; // 
+  display.innerHTML = displayContent; 
 }
