@@ -1,11 +1,12 @@
-let display = document.querySelector(".display");
-let result = document.querySelector(".result");
-let btns = document.querySelectorAll("button");
+const display = document.querySelector(".display");
+const result = document.querySelector(".result");
+const btns = document.querySelectorAll("button");
 
 /* VARIABLES */
 let displayContent = "";
 let lastResult = ""; // 이전에 계산된 값 저장 변수
 let isCalculated = false; // 계산이 완료되었는지 여부
+
 
 /* FUNCTIONS */
 function add(a, b) {
@@ -117,12 +118,14 @@ function plusMinusBtn(e) {
     currentValue = -currentValue;
     displayContent = currentValue.toString(); 
     display.innerHTML = displayContent; // 변경된 값을 화면에 표시합니다.
+    result.innerHTML = displayContent;
   }
 }
 
 function percentageBtn(e) {
-  let currentValue = parseFloat(displayContent); 
+  let currentValue = parseFloat(displayContent); // 현재 입력된 숫자를 가져오기
   currentValue = currentValue / 100; // 현재 값에 100을 나누어 백분율 값을 계산
   displayContent = currentValue.toString(); 
   display.innerHTML = displayContent; 
+  result.innerHTML = displayContent;
 }
