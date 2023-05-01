@@ -1,0 +1,120 @@
+:root {
+  --color-backColor: rgb(53, 51, 51);
+  --color-fontColor: rgb(238, 229, 229);
+  --color-topColor: rgb(183, 178, 171);
+  --color-numColor: rgb(92, 89, 85);
+  --color-operatorColor: rgb(255, 176, 57);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.calculator {
+  width: 300px;
+  background-color: var(--color-backColor);
+  padding: 50px 20px 20px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.num:hover,
+.decimal:hover {
+  transition: all ease 0.2s;
+  background: #afafaf;
+  color: var(--color-fontColor);
+  /* opacity: 0.7; */
+}
+
+.clear:hover,
+.calculate:hover {
+  background: #dfdede;
+  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -ms-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+}
+
+.display {
+  color: #898989;
+  font-size: 28px;
+  height: 30px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.result {
+  font-size: 58px;
+  color: var(--color-fontColor);
+  text-align: right;
+  padding-right: 20px;
+}
+
+.button-top > button {
+  background-color: var(--color-topColor);
+}
+
+.button-top > .clear,
+.calculate {
+  font-size: 24px;
+}
+
+.button-top > .operator {
+  background-color: var(--color-operatorColor);
+}
+
+.operator,
+.equal {
+  background-color: var(--color-operatorColor);
+  color: var(--color-fontColor);
+  font-size: 32px;
+}
+
+.operator:hover,
+.equal:hover {
+  transition: all ease 0.2s;
+  background: #fff;
+  color: var(--color-operatorColor);
+}
+
+.button-row > button {
+  color: var(--color-fontColor);
+}
+
+.num,
+.decimal {
+  background-color: var(--color-numColor);
+}
+
+.zero {
+  width: 135px;
+  border-radius: 90px;
+  text-align: left;
+  padding-left: 25px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  color: var(--color-topColor);
+}
