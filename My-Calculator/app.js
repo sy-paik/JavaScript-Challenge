@@ -52,6 +52,9 @@ btns.forEach((btn) => {
 });
 
 function numberBtn(e) {
+  if (e.target.textContent === "." && displayContent.includes(".")) {
+    return; // 이미 소수점이 있는 경우 더 이상 추가하지 않음
+  }
   displayContent += e.target.textContent;
   display.innerHTML = displayContent;
   // result.innerHTML = e.target.textContent; // 숫자나 연산자 입력시 result에도 보여지도록 추가
