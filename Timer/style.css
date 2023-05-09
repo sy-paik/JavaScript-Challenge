@@ -1,0 +1,141 @@
+body {
+    background: radial-gradient(96.74% 276.79% at 3.59% 5.28%, #F0F4FF 0%, #A5B6EE 100%) no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    background: linear-gradient(144.07deg, #5572BB 2.13%, #374B7C 102.97%);
+    box-shadow: 20px 20px 60px 10px #374B7C66;
+    height: 360px;
+    width: 400px;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+.container h2 {
+    color: #fff;
+    text-align: center;
+    padding-top: 48px;
+    position: relative;
+    margin-bottom: 23px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -32px;
+    left: 32px;
+    width: 312px;
+    height: 1px;
+    background-color: #3D538A;
+  }
+
+  label {
+    color: #A5B6EE;
+    font-size: 12px;
+  }
+
+  .input-area {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+  }
+
+  input {
+    height: 80px;
+    width: 80px;
+    left: 0px;
+    top: 0px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.input-hour, .input-min, .input-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    background: linear-gradient(314.28deg, #304577 0%, #4C65A0 83%),
+linear-gradient(0deg, #354971, #354971);
+border: 1px #354971;
+color: #fff;
+font-size: 40px;
+margin: 0 auto;
+text-align: center;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+input::after {
+    content:"";
+    display: block;
+    color: #8198D0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+ }
+
+ button {
+    border: none;
+    padding: 16px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-control {
+    margin: auto;
+}
+
+.btn-start {
+    background-color: #5180FF;
+    margin-right: 12px;
+}
+
+.btn-reset {
+    background-color: #FB7099;
+}
+
+.btn-start::before {
+    content: " ";
+    display: inline-block;
+    background: url('./img/Vector\ 7.png');
+    width: 11px;
+    height: 17px;
+    margin-right: 7px;
+}
+
+.btn-reset::before {
+    content: " ";
+    display: inline-block;
+    background: url('./img/Vector\ 7.png');
+    width: 11px;
+    height: 17px;
+    margin-right: 7px;
+}
+
+.btn-control {
+    display: flex;
+    justify-content: center;
+}
+
